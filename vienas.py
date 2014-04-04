@@ -15,15 +15,16 @@ def counting(x):
     data_string = str(Counter(x))
     words = re.findall(r'\w+', x)
     data_words = str(Counter(words))
-    return "symbols " + data_string + "words " + data_words + "\n" 
+    return "symbols " + data_string + "words " + data_words + "\n"
+
 
 def writing(x):
     file = open('results.txt', 'a')
     file.write(x)
     file.close()
 
-#print('please specify the directory')#
-path = "/home/ruteles/Desktop/"
+
+path = sys.argv[1]
 dirs = os.listdir(path)
 all_text = ''
 for file in dirs:
@@ -31,4 +32,4 @@ for file in dirs:
     text = reading(path + file)
     all_text = all_text + text
     writing(counting(text))
-writing("In all files " + counting(all_text) + "\n" )
+writing("In all files " + counting(all_text) + "\n")
