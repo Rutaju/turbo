@@ -15,7 +15,7 @@ def counting(x):
     data_string = str(Counter(x))
     words = re.findall(r'\w+', x)
     data_words = str(Counter(words))
-    return "symbols " + data_string + "words " + data_words + "\n"
+    return "symbols " + data_string + "words " + data_words
 
 
 def writing(x):
@@ -30,7 +30,6 @@ stat = {}
 for file in dirs:
     if file[:1] != '.':
         name = str(file)
-        writing("In file " + name + ' ')
         text = reading(path + file)
         stat[name] = (counting(text))
-        writing(str(stat))
+writing(str(stat))
