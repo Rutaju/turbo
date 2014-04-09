@@ -26,11 +26,9 @@ def writing(x):
 
 path = sys.argv[1]
 dirs = os.listdir(path)
-all_text = ''
+stat = {}
 for file in dirs:
     if file[:1] != '.':
         writing("In file " + str(file) + ' ')
         text = reading(path + file)
-        all_text = all_text + text
         writing(counting(text))
-writing("In all files " + counting(all_text) + "\n")
