@@ -29,6 +29,8 @@ dirs = os.listdir(path)
 stat = {}
 for file in dirs:
     if file[:1] != '.':
-        writing("In file " + str(file) + ' ')
+        name = str(file)
+        writing("In file " + name + ' ')
         text = reading(path + file)
-        writing(counting(text))
+        stat[name] = (counting(text))
+        writing(str(stat))
