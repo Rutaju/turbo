@@ -33,3 +33,6 @@ for file in dirs:
         text = reading(path + file)
         stat[name] = (counting(text))
 writing(str(stat))
+values = stat.values()
+all_files = counting(str(values))
+writing("\n" + "In alll files: " + all_files)
